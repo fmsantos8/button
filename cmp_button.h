@@ -3,10 +3,6 @@
  * @author Fabricio Santos (fmsantos8@ucs.br)
  * @brief Logical button readings with board-supplied polarity.
  *
- * Serialize calls in normal execution context; no ISR or synchronization support.
- * Context and borrowed GPIO must outlive their uses. Inputs and outputs must not
- * overlap context storage. No dynamic allocation or internal timer.
- * The caller supplies a time function and polling; press events and hold timing remain external.
  */
 #ifndef CMP_BUTTON_H
 #define CMP_BUTTON_H

@@ -20,7 +20,7 @@ extern "C" {
  * @brief Input resource and electrical polarity supplied by the composition.
  *
  * @details The BSP configures the input and its pull resistors. This component
- * borrows the handle without selecting pins or constructing GPIO resources.
+ * uses the input GPIO without selecting pins or constructing GPIO resources.
  */
 struct button_config {
     hal_gpio_t *gpio;             /** Required, already constructed input GPIO. */
@@ -36,7 +36,7 @@ struct button_config {
  * consumers. cmp_button_init() sets all fields. No singleton or HAL arena allocation.
  */
 struct button {
-    hal_gpio_t *gpio;             /** Borrowed input GPIO handle. */
+    hal_gpio_t *gpio;             /** Input GPIO handle. */
     bool active_level;            /** Electrical level representing a pressed button. */
     bool initialized;             /** True after successful GPIO verification. */
     uint32_t debounce;            /** Effective stable sample interval in milliseconds. */

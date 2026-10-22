@@ -33,7 +33,7 @@ button_status_t cmp_button_init(button_t *button, const button_config_t *config)
         .get_ticks = config->get_ticks,
     };
 
-    // Verify the borrowed input without retaining or publishing its initial state.
+    // Verify the input GPIO without retaining or publishing its initial state.
     bool level;
     button_status_t status = cmp_button_translate_status(hal_gpio_read(button->gpio, &level));
     if (status == BUTTON_STATUS_OK) {
